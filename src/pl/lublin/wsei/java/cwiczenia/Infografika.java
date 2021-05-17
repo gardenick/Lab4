@@ -33,7 +33,7 @@ public class Infografika {
             adresStrony = "";
             System.out.println("");
         }
-        pat = Pattern.compile("media:content url(.*?) ");
+        pat = Pattern.compile("media:content url=\"(.*)\" type");
         m = pat.matcher(text);
         if (m.find()) {
             adresGrafiki = m.group(1);
@@ -41,7 +41,7 @@ public class Infografika {
         } else
             System.out.println("");
 
-        pat = Pattern.compile("media:thumbnail url(.*?) ");
+        pat = Pattern.compile("media:thumbnail url=\"(.*)\"");
         m = pat.matcher(text);
         if (m.find()) {
             adresMiniaturki = m.group(1);
